@@ -1,12 +1,19 @@
+import java.util.Arrays;
+
 public class StreamTask {
 
     public static int getSumSquareEven(int[] numbers) {
-        // TODO replace return with your code
-        return 0;
+        int sumSquareEven = Arrays.stream(numbers)
+                .filter(x -> x % 2 == 0)
+                .reduce(0, (sum, elem) -> sum + elem * elem);
+        return sumSquareEven;
     }
 
     public static int[] getSortedOddsArray(int[] numbers) {
-        // TODO replace return with your code
-        return new int[]{};
+        int[] sortedOddsArray = Arrays.stream(numbers)
+                .filter(x -> x % 2 != 0)
+                .sorted()
+                .toArray();
+        return sortedOddsArray;
     }
 }
